@@ -8,12 +8,9 @@ set R=ray_tracing
 set "files= "
 
 rem List of files to compile:
-rem set files=%files% %R%/obstacle.py
-rem set files=%files% %R%/draw.py
-rem set files=%files% %R%/model.py
-set files=%files% %R%/point.py
-rem set files=%files% %R%/queue.py
-set files=%files% %R%/ray.py
+
+
+set files=%files% %R%/geometry/point.py
 
 
 echo Files to compile:
