@@ -1,5 +1,8 @@
 import setuptools
 
+from Cython.Build import cythonize
+from mypyc.build import mypycify
+
 setuptools.setup(
     name="ray-tracing",
     version="0.1",
@@ -17,6 +20,20 @@ setuptools.setup(
         'mypy-extensions',
         'typing-extensions',
     ],
+    ext_modules=cythonize(
+        [
+            'ray_tracing/geometry/point.pyx',
+        ]
+    )
+    # + mypycify(
+    #     [
+    #         'ray_tracing/geometry/line.py',
+    #         # 'ray_tracing/geometry/point.py',
+    #         # 'ray_tracing/geometry/point.py',
+    #         # 'ray_tracing/geometry/point.py',
+    #         # 'ray_tracing/geometry/point.py',
+    #     ]
+    # ),
 )
 
 # also requires 'https://github.com/denballakh/ranger-tools' be installed
